@@ -40,7 +40,7 @@ Este projeto é uma aplicação Spring Boot desenvolvida com Java 17. Ela fornec
 
 # Execução de uso dos endpoints:
 
-#### Criando um Cliente (POST /clientes):
+>Criando um Cliente (POST /clientes):
 
 Método HTTP: POST
 URL: http://localhost:8080/clientes
@@ -58,7 +58,7 @@ Exemplo:
 ```
 
   
-#### Atualizando um Cliente (PUT /clientes):
+>Atualizando um Cliente (PUT /clientes):
 
 Método HTTP: PUT
 URL: http://localhost:8080/clientes/{id}
@@ -75,12 +75,10 @@ Exemplo:
   "nome": "João da Silva Mendes",
   "ativo": "true" 
 }
-
 ```
 
-  
 
-#### Consultando um Cliente por ID (GET /clientes/{id}):
+>Consultando um Cliente por ID (GET /clientes/{id}):
 
 Método HTTP: GET
 URL: http://localhost:8080/clientes/{id}
@@ -88,14 +86,14 @@ Substitua {id} pelo ID do cliente que deseja consultar.
 Observação: Nenhum dado precisa ser enviado no corpo da requisição para essa consulta.
 
   
-#### Consultando Lista de Clientes (GET /clientes):
+>Consultando Lista de Clientes (GET /clientes):
 
 Método HTTP: GET
 URL: http://localhost:8080/clientes
 Observação: Nenhum dado precisa ser enviado no corpo da requisição para essa consulta.
 
   
-#### Consultando Cliente por Nome (GET /clientes/busca?nome={nome}):
+>Consultando Cliente por Nome (GET /clientes/busca?nome={nome}):
 
 Método HTTP: GET
 URL: http://localhost:8080/clientes/busca?nome={nome}
