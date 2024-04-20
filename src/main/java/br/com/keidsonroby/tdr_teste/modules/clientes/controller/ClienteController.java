@@ -48,4 +48,10 @@ public class ClienteController {
     var cliente = this.clienteService.buscaPorId(id);
       return ResponseEntity.ok(cliente);
   }
+
+  @GetMapping
+  public ResponseEntity<Object> getAllClientes() {
+    var clientes = this.clienteService.listaClientes();
+    return ResponseEntity.ok(clientes);
+  }
 }
