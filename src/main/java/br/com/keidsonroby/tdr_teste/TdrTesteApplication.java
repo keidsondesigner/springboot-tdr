@@ -1,0 +1,13 @@
+package br.com.keidsonroby.tdr_teste;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class TdrTesteApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(TdrTesteApplication.class, args);
+	}
+
+}
