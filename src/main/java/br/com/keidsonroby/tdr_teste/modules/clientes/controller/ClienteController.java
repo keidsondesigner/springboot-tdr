@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -39,5 +41,11 @@ public class ClienteController {
     }
     var clienteAtualizado = this.clienteService.atualizar(clienteEntity);
     return ResponseEntity.ok(clienteAtualizado);
+  }
+
+  @GetMapping("/{id}")
+  public ResponseEntity<Object> getClientePorId(@PathVariable Integer id) {
+    var cliente = this.clienteService.buscaPorId(id);
+      return ResponseEntity.ok(cliente);
   }
 }
