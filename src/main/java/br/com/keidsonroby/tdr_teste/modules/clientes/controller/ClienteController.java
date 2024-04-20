@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
@@ -29,5 +30,14 @@ public class ClienteController {
       }
       var clienteSalvo = this.clienteService.salvar(clienteEntity);
       return ResponseEntity.ok(clienteSalvo);
+  }
+
+  @PutMapping
+  public ResponseEntity<Object> putCliente(@RequestBody ClienteEntity clienteEntity, BindingResult bindingResult) {
+    if(bindingResult.hasErrors()) {
+      return ResponseEntity.badRequest().body(bindingResult.getAllErrors());
+    }
+    var clienteAtualizado = this.clienteService.atualizar(clienteEntity);
+    return ResponseEntity.ok(clienteAtualizado);
   }
 }
