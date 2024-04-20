@@ -19,5 +19,9 @@ public class ClienteService {
   public ClienteEntity atualizar(ClienteEntity clienteEntity) {
     return this.clienteRepository.save(clienteEntity);
   }
+
+  public ClienteEntity buscaPorId(Integer id) {
+    return this.clienteRepository.findById(id).get();
+  }
 }
 
