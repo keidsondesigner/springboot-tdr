@@ -30,5 +30,10 @@ public class ClienteService {
     var clientes = this.clienteRepository.findAll();
     return clientes;
   }
+
+  public List<ClienteEntity> buscaPorNome(String nome) {
+    var cliente = this.clienteRepository.findByNome("%" + nome + "%");
+    return cliente;
+  }
 }
 

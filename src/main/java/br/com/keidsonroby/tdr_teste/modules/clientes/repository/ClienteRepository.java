@@ -7,6 +7,7 @@ import br.com.keidsonroby.tdr_teste.modules.clientes.entity.ClienteEntity;
 
 
 public interface ClienteRepository extends JpaRepository<ClienteEntity, Integer> {
+  // Query methods for getting data from database
   @Query("select c from cliente c where c.nome like :nome")
   List<ClienteEntity> findByNome(String nome);
 }
