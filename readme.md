@@ -1,10 +1,10 @@
-### Projeto Spring Boot com Java 17
+# Projeto Spring Boot com Java 17
 
 
 **Descrição**:
 Este projeto é uma aplicação Spring Boot desenvolvida com Java 17. Ela fornece uma API RESTful para gerenciar entidades Cliente.
 
-### Tecnologias Utilizadas
+# Tecnologias Utilizadas
 - Spring Boot: Framework para desenvolvimento rápido e simplificado de aplicações Java.
 
 - Java 17: A versão mais recente da linguagem Java, oferecendo recursos de produtividade e desempenho aprimorados.
@@ -23,7 +23,7 @@ Este projeto é uma aplicação Spring Boot desenvolvida com Java 17. Ela fornec
 
 
 
-### A API expõe os seguintes endpoints para gerenciar os clientes:
+# A API expõe os seguintes endpoints para gerenciar os clientes:
 
 
 **POST** http://localhost:8080/clientes: Cria um novo cliente. O corpo da requisição deve conter um objeto ClienteEntity válido.
