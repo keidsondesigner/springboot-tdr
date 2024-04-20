@@ -50,7 +50,7 @@ Tipo de Conteúdo: application/json
 
 Exemplo:
 
-```JSON
+```
 {
   "nome": "João da Silva",
   "ativo": "true",
@@ -69,7 +69,7 @@ Tipo de Conteúdo: application/json
 
 Exemplo:
 
-```JSON
+```
 {
   "id": 1,
   "nome": "João da Silva Mendes",
