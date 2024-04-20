@@ -8,6 +8,7 @@ import br.com.keidsonroby.tdr_teste.modules.clientes.service.ClienteService;
 import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -53,5 +54,11 @@ public class ClienteController {
   public ResponseEntity<Object> getAllClientes() {
     var clientes = this.clienteService.listaClientes();
     return ResponseEntity.ok(clientes);
+  }
+
+  @GetMapping("/busca")
+  public ResponseEntity<Object> getClientePorNome(@RequestParam String nome) {
+    var cliente = this.clienteService.buscaPorNome(nome);
+    return ResponseEntity.ok(cliente);
   }
 }
