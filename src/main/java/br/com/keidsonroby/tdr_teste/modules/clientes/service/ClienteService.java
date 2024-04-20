@@ -15,5 +15,9 @@ public class ClienteService {
   public ClienteEntity salvar(ClienteEntity clienteEntity) {
     return this.clienteRepository.save(clienteEntity);
   }
+
+  public ClienteEntity atualizar(ClienteEntity clienteEntity) {
+    return this.clienteRepository.save(clienteEntity);
+  }
 }
 
