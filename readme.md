@@ -61,9 +61,9 @@ Exemplo:
 >Atualizando um Cliente (PUT /clientes):
 
 Método HTTP: PUT
-URL: http://localhost:8080/clientes/{id}
-Substitua {id} pelo ID do cliente que deseja atualizar.
-Corpo da Requisição:
+URL: http://localhost:8080/clientes
+Utilize o ID do cliente que deseja atualizar, no corpo da Requisição
+
 Conteúdo: Objeto JSON representando o cliente atualizado.
 Tipo de Conteúdo: application/json
 
