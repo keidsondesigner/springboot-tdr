@@ -18,22 +18,30 @@ public class ClienteService {
     return this.clienteRepository.save(clienteEntity);
   }
 
-  public ClienteEntity atualizar(ClienteEntity clienteEntity) {
-    return this.clienteRepository.save(clienteEntity);
-  }
-
-  public ClienteEntity buscaPorId(Integer id) {
-    return this.clienteRepository.findById(id).get();
-  }
-
   public List<ClienteEntity> listaClientes() {
     var clientes = this.clienteRepository.findAll();
     return clientes;
   }
-
+  
+  public ClienteEntity buscaPorId(Integer id) {
+    return this.clienteRepository.findById(id).get();
+  }
+  
   public List<ClienteEntity> buscaPorNome(String nome) {
     var cliente = this.clienteRepository.findByNome("%" + nome + "%");
     return cliente;
+  }
+
+  public ClienteEntity atualizar(ClienteEntity clienteEntity) {
+    return this.clienteRepository.save(clienteEntity);
+  }
+
+  // public void deletaPorId(Integer id) {
+  //   this.clienteRepository.deleteById(id);
+  // }
+
+  public void deletarCliente(ClienteEntity clienteEntity) {
+    this.clienteRepository.delete(clienteEntity);
   }
 }
 

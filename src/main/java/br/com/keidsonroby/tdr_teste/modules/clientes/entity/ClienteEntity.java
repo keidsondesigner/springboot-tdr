@@ -4,7 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
@@ -13,8 +12,7 @@ import lombok.Data;
 public class ClienteEntity {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_funcao")
-  @SequenceGenerator(name = "sq_funcao", sequenceName = "seq_cliente_id", schema = "public", allocationSize = 1)
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
 
   @NotNull(message = "O campo [name], não foi informado.")

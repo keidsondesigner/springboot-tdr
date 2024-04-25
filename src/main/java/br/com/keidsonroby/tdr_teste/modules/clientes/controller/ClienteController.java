@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,6 +36,25 @@ public class ClienteController {
       return ResponseEntity.ok(clienteSalvo);
   }
 
+  
+  @GetMapping("/{id}")
+  public ResponseEntity<Object> getClientePorId(@PathVariable Integer id) {
+    var cliente = this.clienteService.buscaPorId(id);
+    return ResponseEntity.ok(cliente);
+  }
+  
+  @GetMapping
+  public ResponseEntity<Object> getAllClientes() {
+    var clientes = this.clienteService.listaClientes();
+    return ResponseEntity.ok(clientes);
+  }
+  
+  @GetMapping("/busca")
+  public ResponseEntity<Object> getClientePorNome(@RequestParam String nome) {
+    var cliente = this.clienteService.buscaPorNome(nome);
+    return ResponseEntity.ok(cliente);
+  }
+  
   @PutMapping
   public ResponseEntity<Object> putCliente(@RequestBody ClienteEntity clienteEntity, BindingResult bindingResult) {
     if(bindingResult.hasErrors()) {
@@ -44,21 +64,17 @@ public class ClienteController {
     return ResponseEntity.ok(clienteAtualizado);
   }
 
-  @GetMapping("/{id}")
-  public ResponseEntity<Object> getClientePorId(@PathVariable Integer id) {
+  // @DeleteMapping("/{id}")
+  // public ResponseEntity<Object> deleteClientePorId(@PathVariable Integer id) {
+  //   this.clienteService.deletaPorId(id);
+  //   return ResponseEntity.noContent().build();
+  // }
+
+  @DeleteMapping("/{id}")
+  public ResponseEntity<Object> deleteCliente(@PathVariable Integer id) {
     var cliente = this.clienteService.buscaPorId(id);
-      return ResponseEntity.ok(cliente);
-  }
-
-  @GetMapping
-  public ResponseEntity<Object> getAllClientes() {
-    var clientes = this.clienteService.listaClientes();
-    return ResponseEntity.ok(clientes);
-  }
-
-  @GetMapping("/busca")
-  public ResponseEntity<Object> getClientePorNome(@RequestParam String nome) {
-    var cliente = this.clienteService.buscaPorNome(nome);
-    return ResponseEntity.ok(cliente);
+    this.clienteService.deletarCliente(cliente);
+    // return ResponseEntity.noContent().build();
+    return ResponseEntity.ok("Item deletado" + " " + cliente);
   }
 }
